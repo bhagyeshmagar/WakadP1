@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Maharashtra Police Diary</string>
+    <string-array name="activity_types">
+        <item>कवाडकर्म (Office work)</item>
+        <item>नागरी भेटी (Citizen visit)</item>
+        <item>तपास (Investigation)</item>
+        <item>गस्ती (Patrol)</item>
+        <item>आपत्कालीन (Emergency)</item>
+        <item>न्यायालय (Court)</item>
+        <item>इतर (Other)</item>
+    </string-array>
+</resources>

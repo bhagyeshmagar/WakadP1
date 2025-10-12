@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.WakaDP1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_blue_700</item>
+        <item name="colorPrimaryVariant">@color/md_blue_700</item>
+        <item name="colorSecondary">@color/md_yellow_600</item>
+    </style>
+</resources>
