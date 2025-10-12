@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Light / default theme -->
+    <style name="Theme.WakadP1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Core brand colors -->
+        <item name="colorPrimary">@color/md_blue_700</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/md_yellow_600</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Background -->
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+</resources>

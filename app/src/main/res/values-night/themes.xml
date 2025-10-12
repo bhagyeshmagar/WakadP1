@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Dark theme -->
+    <style name="Theme.WakadP1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Dark mode variants -->
+        <item name="colorPrimary">@color/blue_200</item>
+        <item name="colorOnPrimary">@android:color/black</item>
+        <item name="colorSecondary">@color/md_yellow_600</item>
+
+        <!-- Dark background -->
+        <item name="android:windowBackground">#121212</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
