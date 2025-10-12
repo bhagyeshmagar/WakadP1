@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     android:padding="18dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="18dp"
+    android:clipToPadding="false"
+    android:background="?android:attr/colorBackground">
+>>>>>>> 30baf9b (Initial commit)
 
     <LinearLayout
         android:orientation="vertical"
@@ -13,6 +23,10 @@
             android:text="Add Activity"
             android:textSize="20sp"
             android:textStyle="bold"
+<<<<<<< HEAD
+=======
+            android:textColor="?android:attr/textColorPrimary"
+>>>>>>> 30baf9b (Initial commit)
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -20,7 +34,40 @@
             android:id="@+id/spinnerType"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="wrap_content" />
+=======
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorControlNormal" />
+
+        <!-- Date selection row -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Date:"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:text="--/--/----"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+>>>>>>> 30baf9b (Initial commit)
 
         <!-- Time selection row -->
         <LinearLayout
@@ -32,6 +79,10 @@
 
             <TextView
                 android:text="Start Time:"
+<<<<<<< HEAD
+=======
+                android:textColor="?android:attr/textColorPrimary"
+>>>>>>> 30baf9b (Initial commit)
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -41,7 +92,11 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="8dp"
+<<<<<<< HEAD
                 android:textColor="@android:color/holo_blue_dark"
+=======
+                android:textColor="?attr/colorPrimary"
+>>>>>>> 30baf9b (Initial commit)
                 android:layout_marginStart="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -53,6 +108,10 @@
 
             <TextView
                 android:text="End Time:"
+<<<<<<< HEAD
+=======
+                android:textColor="?android:attr/textColorPrimary"
+>>>>>>> 30baf9b (Initial commit)
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -62,7 +121,11 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="8dp"
+<<<<<<< HEAD
                 android:textColor="@android:color/holo_blue_dark"
+=======
+                android:textColor="?attr/colorPrimary"
+>>>>>>> 30baf9b (Initial commit)
                 android:layout_marginStart="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -75,19 +138,35 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:gravity="top"
+<<<<<<< HEAD
             android:background="@android:drawable/edit_text" />
+=======
+            android:textColor="?android:attr/textColorPrimary"
+            android:textColorHint="?android:attr/textColorHint"
+            android:backgroundTint="?attr/colorControlNormal" />
+>>>>>>> 30baf9b (Initial commit)
 
         <Button
             android:id="@+id/btnAttach"
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:text="Attach file" />
+=======
+            android:text="Attach File"
+            android:backgroundTint="?attr/colorPrimary"
+            android:textColor="?android:attr/textColorPrimaryInverse" />
+>>>>>>> 30baf9b (Initial commit)
 
         <CheckBox
             android:id="@+id/chkPending"
             android:layout_marginTop="10dp"
             android:text="Mark as pending"
+<<<<<<< HEAD
+=======
+            android:textColor="?android:attr/textColorPrimary"
+>>>>>>> 30baf9b (Initial commit)
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
@@ -97,7 +176,13 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="Save Entry"
+<<<<<<< HEAD
             android:backgroundTint="@color/md_yellow_600" />
+=======
+            android:backgroundTint="@color/md_yellow_600"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+>>>>>>> 30baf9b (Initial commit)
 
     </LinearLayout>
 </ScrollView>

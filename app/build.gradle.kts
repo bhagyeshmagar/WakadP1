@@ -3,6 +3,10 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.kapt")
+<<<<<<< HEAD
+=======
+    id("com.google.gms.google-services")
+>>>>>>> 30baf9b (Initial commit)
 
 }
 
@@ -62,6 +66,13 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
 
+<<<<<<< HEAD
+=======
+    // Firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.1.2"))
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+>>>>>>> 30baf9b (Initial commit)
     // Compose BOM + core
     implementation(platform("androidx.compose:compose-bom:2024.09.00"))
     implementation("androidx.activity:activity-compose:1.9.2")

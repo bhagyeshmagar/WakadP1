@@ -1,5 +1,9 @@
 package com.example.wakadp1
 
+<<<<<<< HEAD
+=======
+import android.app.DatePickerDialog
+>>>>>>> 30baf9b (Initial commit)
 import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
@@ -21,8 +25,15 @@ class AddEntryActivity : AppCompatActivity() {
     private var attachUri: Uri? = null
     private var startMillis = 0L
     private var endMillis = 0L
+<<<<<<< HEAD
 
     private lateinit var spinner: Spinner
+=======
+    private var selectedDateMillis = 0L
+
+    private lateinit var spinner: Spinner
+    private lateinit var tvDate: TextView
+>>>>>>> 30baf9b (Initial commit)
     private lateinit var tvStart: TextView
     private lateinit var tvEnd: TextView
     private lateinit var etNotes: EditText
@@ -30,7 +41,11 @@ class AddEntryActivity : AppCompatActivity() {
     private lateinit var btnAttach: Button
     private lateinit var btnSave: Button
 
+<<<<<<< HEAD
     // New API for picking files (replaces deprecated onActivityResult)
+=======
+    // File picker launcher
+>>>>>>> 30baf9b (Initial commit)
     private val pickFileLauncher =
         registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
             attachUri = uri
@@ -43,7 +58,13 @@ class AddEntryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_entry)
 
+<<<<<<< HEAD
         spinner = findViewById(R.id.spinnerType)
+=======
+        // Initialize views
+        spinner = findViewById(R.id.spinnerType)
+        tvDate = findViewById(R.id.tvDate)
+>>>>>>> 30baf9b (Initial commit)
         tvStart = findViewById(R.id.tvStartTime)
         tvEnd = findViewById(R.id.tvEndTime)
         etNotes = findViewById(R.id.etNotes)
@@ -55,6 +76,32 @@ class AddEntryActivity : AppCompatActivity() {
         val arr = resources.getStringArray(R.array.activity_types)
         spinner.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, arr)
 
+<<<<<<< HEAD
+=======
+        // --- DATE PICKER ---
+        val calendar = Calendar.getInstance()
+        val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+
+        // Set current date by default
+        selectedDateMillis = calendar.timeInMillis
+        tvDate.text = dateFormat.format(calendar.time)
+
+        tvDate.setOnClickListener {
+            val datePicker = DatePickerDialog(
+                this,
+                { _, year, month, dayOfMonth ->
+                    calendar.set(year, month, dayOfMonth)
+                    selectedDateMillis = calendar.timeInMillis
+                    tvDate.text = dateFormat.format(calendar.time)
+                },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+            )
+            datePicker.show()
+        }
+
+>>>>>>> 30baf9b (Initial commit)
         // Time picker handlers
         tvStart.setOnClickListener { showTimePicker(true) }
         tvEnd.setOnClickListener { showTimePicker(false) }
@@ -101,6 +148,14 @@ class AddEntryActivity : AppCompatActivity() {
         val notes = etNotes.text?.toString() ?: ""
         val isPending = chkPending.isChecked
 
+<<<<<<< HEAD
+=======
+        if (selectedDateMillis == 0L) {
+            Toast.makeText(this, "Please select a date", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+>>>>>>> 30baf9b (Initial commit)
         if (startMillis == 0L || endMillis == 0L) {
             Toast.makeText(this, "Please select start and end times", Toast.LENGTH_SHORT).show()
             return
@@ -115,7 +170,12 @@ class AddEntryActivity : AppCompatActivity() {
         val officerId = prefs.getString("officer_id", "") ?: ""
         val branch = "Wakad Branch"
 
+<<<<<<< HEAD
         val dateKey = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date())
+=======
+        // Format date for DB
+        val dateKey = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date(selectedDateMillis))
+>>>>>>> 30baf9b (Initial commit)
 
         val entry = ActivityEntry(
             officerId = officerId,

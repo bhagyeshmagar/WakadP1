@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Maharashtra Police Diary</string>
+<<<<<<< HEAD
+=======
+    <string name="app_logo_desc">App logo</string>
+
+>>>>>>> 30baf9b (Initial commit)
     <string-array name="activity_types">
         <item>कवाडकर्म (Office work)</item>
         <item>नागरी भेटी (Citizen visit)</item>
