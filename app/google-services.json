@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "775377206727",
+    "project_id": "wakad-police-8529e",
+    "storage_bucket": "wakad-police-8529e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:775377206727:android:80f3c766fb8c616ab1ade2",
+        "android_client_info": {
+          "package_name": "com.example.wakadp1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ6CKXHYVQ0uo9TWCdi7XY638qF79WlDc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
