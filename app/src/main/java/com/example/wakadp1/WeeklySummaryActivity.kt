@@ -1,11 +1,11 @@
 package com.example.wakadp1
 
+import com.example.wakadp1.adapters.WeeklyAdapter
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.wakadp1.adapters.WeeklyAdapter
 import com.example.wakadp1.data.AppDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -22,7 +22,7 @@ class WeeklySummaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weekly_summary)
 
-        recyclerWeeks = findViewById(R.id.recyclerWeeks)
+        recyclerWeeks = findViewById(R.id.rvSummary)
         recyclerWeeks.layoutManager = LinearLayoutManager(this)
 
         loadWeeklyData()
@@ -70,7 +70,7 @@ class WeeklySummaryActivity : AppCompatActivity() {
             val (start, end) = range.split("|")
 
             val daysGrouped = list.groupBy { it.date }.map { (date, entriesForDay) ->
-                val formatted = try { displayFormat.format(format.parse(date)!!) } catch (e: Exception) { date }
+                val formatted = try { displayFormat.format(format.parse(date)!!) } catch (_: Exception) { date }
                 DaySummary(
                     date = date,
                     dateFormatted = formatted,

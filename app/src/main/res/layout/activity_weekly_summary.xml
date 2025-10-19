@@ -9,6 +9,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tvWeekLabel"
         android:text="@string/weekly_summary"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -17,10 +18,9 @@
         android:layout_height="wrap_content" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerWeeks"
+        android:id="@+id/rvSummary"
         android:layout_marginTop="12dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical" />
-
 </LinearLayout>
