@@ -1,23 +1,13 @@
 package com.example.wakadp1
 
-<<<<<<< HEAD
-import android.content.Intent
-=======
->>>>>>> 30baf9b (Initial commit)
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-<<<<<<< HEAD
-import androidx.recyclerview.widget.RecyclerView
-import com.example.wakadp1.data.AppDatabase
-import com.example.wakadp1.data.ActivityTypeCount
-=======
 import com.example.wakadp1.adapters.WeeklyAdapter
 import com.example.wakadp1.data.AppDatabase
 import com.example.wakadp1.data.WeekSummary
 import com.example.wakadp1.data.DaySummary
->>>>>>> 30baf9b (Initial commit)
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -26,53 +16,12 @@ import java.util.*
 
 class WeeklySummaryActivity : AppCompatActivity() {
 
-<<<<<<< HEAD
-    private lateinit var rv: RecyclerView
-    private lateinit var adapter: SummaryAdapter
-=======
     private lateinit var recyclerWeeks: androidx.recyclerview.widget.RecyclerView
->>>>>>> 30baf9b (Initial commit)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weekly_summary)
 
-<<<<<<< HEAD
-        rv = findViewById(R.id.rvSummary)
-        rv.layoutManager = LinearLayoutManager(this)
-        adapter = SummaryAdapter { type ->
-            // open details
-            val i = Intent(this, ActivityDetailsActivity::class.java)
-            i.putExtra("type", type)
-            startActivity(i)
-        }
-        rv.adapter = adapter
-
-        loadWeeklyCounts()
-    }
-
-    private fun loadWeeklyCounts() {
-        val db = AppDatabase.getInstance(this)
-        lifecycleScope.launch(Dispatchers.IO) {
-            // compute week range (Mon-Sun) - simple approach: last 7 days
-            val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-            val to = Date()
-            val cal = Calendar.getInstance()
-            cal.time = to
-            val toKey = sdf.format(cal.time)
-            cal.add(Calendar.DAY_OF_MONTH, -6)
-            val fromKey = sdf.format(cal.time)
-
-            val prefs = getSharedPreferences("waka_prefs", MODE_PRIVATE)
-            val officerId = prefs.getString("officer_id", "") ?: ""
-
-            val counts: List<ActivityTypeCount> = db.activityDao().countsByType(fromKey, toKey, officerId)
-            withContext(Dispatchers.Main) {
-                adapter.submitList(counts)
-            }
-        }
-    }
-=======
         recyclerWeeks = findViewById(R.id.recyclerWeeks)
         recyclerWeeks.layoutManager = LinearLayoutManager(this)
 
@@ -114,5 +63,4 @@ class WeeklySummaryActivity : AppCompatActivity() {
             WeekSummary("$start - $end", daysGrouped)
         }
     }
->>>>>>> 30baf9b (Initial commit)
 }

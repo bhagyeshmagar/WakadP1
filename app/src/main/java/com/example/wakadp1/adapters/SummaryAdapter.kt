@@ -7,10 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wakadp1.data.ActivityTypeCount
 import com.example.wakadp1.R
-<<<<<<< HEAD
-=======
 
->>>>>>> 30baf9b (Initial commit)
 class SummaryAdapter(private val onClick: (String) -> Unit) : RecyclerView.Adapter<SummaryAdapter.VH>() {
 
     private val items = ArrayList<ActivityTypeCount>()
@@ -23,11 +20,7 @@ class SummaryAdapter(private val onClick: (String) -> Unit) : RecyclerView.Adapt
             view.setOnClickListener {
                 val pos = adapterPosition
                 if (pos != RecyclerView.NO_POSITION) {
-<<<<<<< HEAD
-                    onClick(items[pos].activityType)
-=======
                     onClick(items[pos].type)   // ✅ changed from activityType → type
->>>>>>> 30baf9b (Initial commit)
                 }
             }
         }
@@ -41,11 +34,7 @@ class SummaryAdapter(private val onClick: (String) -> Unit) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         val item = items[position]
-<<<<<<< HEAD
-        holder.tvType.text = item.activityType
-=======
         holder.tvType.text = item.type              // ✅ changed from activityType → type
->>>>>>> 30baf9b (Initial commit)
         holder.tvCount.text = item.count.toString()
     }
 

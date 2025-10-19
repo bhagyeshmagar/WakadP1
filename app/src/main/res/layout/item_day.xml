@@ -3,22 +3,26 @@
     android:orientation="vertical"
     android:padding="8dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    android:elevation="2dp">
 
     <TextView
         android:id="@+id/tvDate"
-        android:text="Sun, 18 Aug 2024"
+        android:text="Date Placeholder"
         android:textStyle="bold"
+        android:textSize="16sp"
         android:textColor="?android:attr/textColorPrimary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp" />
 
-    <TextView
-        android:id="@+id/tvActivities"
-        android:text="3 activities"
-        android:textColor="?android:attr/textColorSecondary"
-        android:layout_marginStart="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerEntries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:layout_marginTop="4dp"
+        android:scrollbars="none" />
 
 </LinearLayout>

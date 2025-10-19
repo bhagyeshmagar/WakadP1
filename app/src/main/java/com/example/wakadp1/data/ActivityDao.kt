@@ -27,6 +27,9 @@ interface ActivityDao {
     suspend fun entriesByTypeAndRange(from: String, to: String, officerId: String, type: String): List<ActivityEntry>
 =======
 
+    @Query("SELECT * FROM activity_entries WHERE officerId = :officerId ORDER BY date DESC, startTime ASC")
+    suspend fun getEntriesForOfficer(officerId: String): List<ActivityEntry>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(entry: ActivityEntry)
 

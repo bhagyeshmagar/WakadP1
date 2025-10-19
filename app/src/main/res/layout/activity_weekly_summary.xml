@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    android:padding="12dp"
-    android:orientation="vertical"
-=======
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true"
     android:padding="16dp"
     android:orientation="vertical"
     android:background="?android:attr/colorBackground"
->>>>>>> 30baf9b (Initial commit)
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-<<<<<<< HEAD
-        android:id="@+id/tvWeekLabel"
-        android:text="Mon, 19 Aug - Sun, 25 Aug"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSummary"
-        android:layout_marginTop="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-=======
         android:id="@+id/tvTitle"
         android:text="Weekly Summary"
         android:textSize="22sp"
@@ -45,5 +25,4 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:paddingBottom="60dp" />
->>>>>>> 30baf9b (Initial commit)
 </LinearLayout>

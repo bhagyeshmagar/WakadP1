@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wakadp1.EntryAdapter
+import com.example.wakadp1.adapters.EntryAdapter
 import com.example.wakadp1.data.AppDatabase
 import com.example.wakadp1.data.ActivityEntry
 import kotlinx.coroutines.Dispatchers
@@ -18,18 +18,19 @@ import java.util.*
 class ActivityDetailsActivity : AppCompatActivity() {
 
     private lateinit var rv: RecyclerView
-    private lateinit var adapter: EntryAdapter
+    private var adapter: EntryAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_weekly_summary) // reuse layout: label + rv
-        val tvWeekLabel = findViewById<TextView>(R.id.tvWeekLabel)
-        tvWeekLabel.text = "Details"
+        setContentView(R.layout.activity_weekly_summary) // reuse layout
 
+        // Label setup
+        val tvWeekLabel = findViewById<TextView>(R.id.tvWeekLabel)
+        tvWeekLabel.text = "Activity Details"
+
+        // Recycler setup
         rv = findViewById(R.id.rvSummary)
         rv.layoutManager = LinearLayoutManager(this)
-        adapter = EntryAdapter()
-        rv.adapter = adapter
 
         val type = intent.getStringExtra("type") ?: return
         loadEntries(type)
@@ -49,10 +50,14 @@ class ActivityDetailsActivity : AppCompatActivity() {
             val prefs = getSharedPreferences("waka_prefs", MODE_PRIVATE)
             val officerId = prefs.getString("officer_id", "") ?: ""
 
-            val entries: List<ActivityEntry> = db.activityDao().entriesByTypeAndRange(fromKey, toKey, officerId, type)
+            val entries: List<ActivityEntry> =
+                db.activityDao().entriesByTypeAndRange(fromKey, toKey, officerId, type)
+
             withContext(Dispatchers.Main) {
-                adapter.submitList(entries)
+                adapter = EntryAdapter(entries)
+                rv.adapter = adapter
             }
         }
     }
 }
+

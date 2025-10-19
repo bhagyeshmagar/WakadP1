@@ -37,41 +37,43 @@
 =======
         android:theme="@style/Theme.WakadP1">
 
-
-    <!-- Login screen is launcher -->
+        <!-- Login screen is launcher -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- Other app screens -->
+        <!-- Other screens -->
         <activity
             android:name=".DashboardActivity"
             android:exported="false"
-            android:configChanges="orientation|screenSize" />
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
         <activity
             android:name=".AddEntryActivity"
             android:exported="false"
-            android:configChanges="orientation|screenSize" />
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
         <activity
             android:name=".WeeklySummaryActivity"
             android:exported="false"
-            android:configChanges="orientation|screenSize" />
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
         <activity
             android:name=".ActivityDetailsActivity"
             android:exported="false"
-            android:configChanges="orientation|screenSize" />
-
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
     </application>
-
 </manifest>
 >>>>>>> 30baf9b (Initial commit)
