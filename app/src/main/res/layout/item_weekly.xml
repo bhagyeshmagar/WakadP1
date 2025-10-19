@@ -2,23 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:padding="12dp"
-    android:layout_marginBottom="12dp"
-    android:background="?attr/colorSurface"
-    android:elevation="2dp"
+    android:layout_marginBottom="10dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    android:elevation="2dp">
 
     <TextView
         android:id="@+id/tvWeekRange"
-        android:text="12 Oct - 18 Oct"
-        android:textStyle="bold"
+        android:text="Week: 01 Jan - 07 Jan"
         android:textSize="18sp"
+        android:textStyle="bold"
         android:textColor="?android:attr/textColorPrimary"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <View
+        android:layout_marginTop="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?attr/colorControlHighlight" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerDays"
+        android:layout_marginTop="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:nestedScrollingEnabled="false" />

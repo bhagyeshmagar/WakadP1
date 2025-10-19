@@ -1,19 +1,19 @@
 package com.example.wakadp1
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wakadp1.adapters.WeeklyAdapter
 import com.example.wakadp1.data.AppDatabase
-import com.example.wakadp1.data.WeekSummary
-import com.example.wakadp1.data.DaySummary
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.text.SimpleDateFormat
 import java.util.*
-
+import com.example.wakadp1.data.WeekSummary
+import com.example.wakadp1.data.DaySummary
 class WeeklySummaryActivity : AppCompatActivity() {
 
     private lateinit var recyclerWeeks: androidx.recyclerview.widget.RecyclerView
@@ -32,15 +32,26 @@ class WeeklySummaryActivity : AppCompatActivity() {
         val db = AppDatabase.getInstance(this)
         lifecycleScope.launch(Dispatchers.IO) {
             val entries = db.activityDao().getAllEntries()
+
+            if (entries.isEmpty()) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@WeeklySummaryActivity, "No entries found", Toast.LENGTH_SHORT).show()
+                }
+                return@launch
+            }
+
             val weeks = groupByWeeks(entries)
+            val sortedWeeks = weeks.sortedByDescending { it.weekRange.substring(0, 10) }
+
             withContext(Dispatchers.Main) {
-                recyclerWeeks.adapter = WeeklyAdapter(weeks)
+                recyclerWeeks.adapter = WeeklyAdapter(sortedWeeks)
             }
         }
     }
 
     private fun groupByWeeks(entries: List<com.example.wakadp1.data.ActivityEntry>): List<WeekSummary> {
         val format = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val displayFormat = SimpleDateFormat("EEE, dd MMM yyyy", Locale.getDefault())
         val map = linkedMapOf<String, MutableList<com.example.wakadp1.data.ActivityEntry>>()
 
         for (entry in entries) {
@@ -57,10 +68,19 @@ class WeeklySummaryActivity : AppCompatActivity() {
 
         return map.map { (range, list) ->
             val (start, end) = range.split("|")
+
             val daysGrouped = list.groupBy { it.date }.map { (date, entriesForDay) ->
-                DaySummary(date, entriesForDay.size)
-            }
+                val formatted = try { displayFormat.format(format.parse(date)!!) } catch (e: Exception) { date }
+                DaySummary(
+                    date = date,
+                    dateFormatted = formatted,
+                    count = entriesForDay.size,
+                    entries = entriesForDay
+                )
+            }.sortedByDescending { it.date }
+
             WeekSummary("$start - $end", daysGrouped)
         }
     }
+
 }
