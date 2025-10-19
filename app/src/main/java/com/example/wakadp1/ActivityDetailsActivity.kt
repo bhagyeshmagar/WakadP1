@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wakadp1.R.*
+import com.example.wakadp1.R.id.rvSummary
 import com.example.wakadp1.adapters.EntryAdapter
 import com.example.wakadp1.data.AppDatabase
 import com.example.wakadp1.data.ActivityEntry
@@ -22,14 +24,14 @@ class ActivityDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_weekly_summary) // reuse layout
+        setContentView(layout.activity_weekly_summary) // reuse layout
 
         // Label setup
-        val tvWeekLabel = findViewById<TextView>(R.id.tvWeekLabel)
+        val tvWeekLabel = findViewById<TextView>(id.tvWeekLabel)
         tvWeekLabel.text = "Activity Details"
 
         // Recycler setup
-        rv = findViewById(R.id.rvSummary)
+        rv = findViewById(rvSummary)
         rv.layoutManager = LinearLayoutManager(this)
 
         val type = intent.getStringExtra("type") ?: return

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Maharashtra Police Diary</string>
     <string name="app_logo_desc">App logo</string>
+    <string name="weekly_summary">Weekly Summary</string>
+    <string name="week_01_jan_07_jan">Week: 01 Jan - 07 Jan</string>
 
     <string-array name="activity_types">
         <item>कवाडकर्म (Office work)</item>

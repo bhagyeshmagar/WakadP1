@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/tvWeekRange"
-        android:text="Week: 01 Jan - 07 Jan"
+        android:text="@string/week_01_jan_07_jan"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="?android:attr/textColorPrimary"

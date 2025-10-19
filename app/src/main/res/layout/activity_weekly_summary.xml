@@ -9,7 +9,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Weekly Summary"
+        android:text="@string/weekly_summary"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="?android:attr/textColorPrimary"
