@@ -3,6 +3,8 @@
 <<<<<<< HEAD
 =======
     <string name="app_logo_desc">App logo</string>
+    <string name="weekly_summary">Weekly Summary</string>
+    <string name="week_01_jan_07_jan">Week: 01 Jan - 07 Jan</string>
 
 >>>>>>> 30baf9b (Initial commit)
     <string-array name="activity_types">
