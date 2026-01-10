@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#BB86FC</color>
-    <color name="purple_500">#6200EE</color>
-    <color name="purple_700">#3700B3</color>
-    <color name="teal_200">#03DAC5</color>
-    <color name="teal_700">#018786</color>
-    <color name="black">#000000</color>
-    <color name="white">#FFFFFF</color>
-    <color name="md_yellow_600">#FFCA28</color>
-    <color name="gray_light">#E0E0E0</color>
-    <color name="md_blue_700">#1976D2</color>
-    <color name="blue_200">#90CAF9</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Maharashtra Police Palette -->
+    <color name="police_navy_blue">#002147</color> <!-- Primary Authority Color -->
+    <color name="police_navy_light">#1A365D</color> <!-- Lighter variant for gradients -->
+    <color name="police_khaki">#C5A059</color>     <!-- Uniform Gold/Khaki -->
+    <color name="police_gold">#FFD700</color>      <!-- Bright Gold for accents -->
+    <color name="police_red">#D32F2F</color>       <!-- Alert/Emergency -->
+    
+    <!-- UI Surface Colors -->
+    <color name="background_light">#F5F5F5</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="text_primary">#002147</color>     <!-- Navy for headers -->
+    <color name="text_secondary">#757575</color>
+    
+    <!-- Legacy compatibility mapped to new system -->
+    <color name="md_yellow_600">@color/police_gold</color>
+    <color name="gray_light">@color/background_light</color>
+    <color name="md_blue_700">@color/police_navy_blue</color>
+    <color name="blue_200">@color/police_khaki</color>
 </resources>

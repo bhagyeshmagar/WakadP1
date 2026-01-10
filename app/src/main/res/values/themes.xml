@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-
     <!-- App theme -->
     <style name="Theme.WakadP1" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
-        <!-- Core brand colors -->
-        <item name="colorPrimary">@color/md_blue_700</item>
-        <item name="colorPrimaryVariant">@color/md_blue_700</item>
-        <item name="colorSecondary">@color/md_yellow_600</item>
-        <item name="colorOnPrimary">@android:color/white</item>
-
+        <!-- Brand colors -->
+        <item name="colorPrimary">@color/police_navy_blue</item>
+        <item name="colorPrimaryVariant">@color/police_navy_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/police_khaki</item>
+        <item name="colorSecondaryVariant">@color/police_gold</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
         <!-- Status bar -->
         <item name="android:statusBarColor">?attr/colorPrimary</item>
-        <item name="android:windowLightStatusBar">true</item>
-
+        <item name="android:windowLightStatusBar">false</item>
+        
         <!-- Background -->
-        <item name="android:windowBackground">@color/white</item>
-
+        <item name="android:windowBackground">@color/background_light</item>
+        
+        <!-- Typography -->
+         <item name="fontFamily">sans-serif-medium</item>
     </style>
-
+    
+    <!-- Card Style for Glassmorphism feel -->
+    <style name="PoliceCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+    
+    <!-- Input Field Style -->
+    <style name="PoliceInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/police_navy_blue</item>
+        <item name="hintTextColor">@color/police_navy_light</item>
+    </style>
 </resources>

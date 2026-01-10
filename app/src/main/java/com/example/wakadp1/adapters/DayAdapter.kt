@@ -15,7 +15,7 @@ class DayAdapter(private val days: List<DaySummary>) :
     RecyclerView.Adapter<DayAdapter.DayViewHolder>() {
 
     inner class DayViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvDate: TextView = view.findViewById(R.id.tvDate)
+        val tvDate: TextView = view.findViewById(R.id.tvDayDate)
         val recyclerEntries: RecyclerView = view.findViewById(R.id.recyclerEntries)
     }
 
