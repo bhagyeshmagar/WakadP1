@@ -13,4 +13,16 @@
         <item>न्यायालय (Court)</item>
         <item>इतर (Other)</item>
     </string-array>
+
+    <!-- App Shortcuts -->
+    <string name="shortcut_add_entry">Add Entry</string>
+    <string name="shortcut_add_entry_long">Add New Activity Entry</string>
+    <string name="shortcut_weekly">Weekly Summary</string>
+    <string name="shortcut_weekly_long">View Weekly Activity Summary</string>
+    <string name="shortcut_profile">My Profile</string>
+    <string name="shortcut_profile_long">View Officer Profile</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Police Alerts</string>
+    <string name="notification_channel_desc">Important alerts and reminders</string>
 </resources>

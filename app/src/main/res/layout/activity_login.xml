@@ -173,6 +173,22 @@
                         android:textStyle="bold"
                         android:padding="8dp"/>
 
+                    <!-- Biometric Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnBiometric"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Use Fingerprint"
+                        android:textColor="@color/police_navy_blue"
+                        android:visibility="gone"
+                        app:icon="@android:drawable/ic_menu_myplaces"
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/police_navy_blue"
+                        app:strokeColor="@color/police_navy_blue"
+                        app:strokeWidth="2dp"/>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

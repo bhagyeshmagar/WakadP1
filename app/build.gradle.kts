@@ -63,6 +63,12 @@ dependencies {
     // Lifecycle
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.6")
 
+    // Advanced Features
+    implementation("androidx.biometric:biometric:1.1.0")           // Biometric Auth
+    implementation("androidx.work:work-runtime-ktx:2.9.1")         // WorkManager
+    implementation("com.google.firebase:firebase-messaging")       // FCM Push
+    implementation("androidx.core:core-splashscreen:1.0.1")        // Splash Screen API
+
     // Testing
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")

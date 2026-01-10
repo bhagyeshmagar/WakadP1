@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Add New Entry Shortcut -->
+    <shortcut
+        android:shortcutId="add_entry"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_input_add"
+        android:shortcutShortLabel="@string/shortcut_add_entry"
+        android:shortcutLongLabel="@string/shortcut_add_entry_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.wakadp1"
+            android:targetClass="com.example.wakadp1.AddEntryActivity" />
+    </shortcut>
+
+    <!-- View Weekly Summary Shortcut -->
+    <shortcut
+        android:shortcutId="weekly_summary"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:shortcutShortLabel="@string/shortcut_weekly"
+        android:shortcutLongLabel="@string/shortcut_weekly_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.wakadp1"
+            android:targetClass="com.example.wakadp1.WeeklySummaryActivity" />
+    </shortcut>
+
+    <!-- View Profile Shortcut -->
+    <shortcut
+        android:shortcutId="profile"
+        android:enabled="true"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:shortcutShortLabel="@string/shortcut_profile"
+        android:shortcutLongLabel="@string/shortcut_profile_long">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.wakadp1"
+            android:targetClass="com.example.wakadp1.ProfileActivity" />
+    </shortcut>
+
+</shortcuts>

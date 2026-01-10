@@ -43,6 +43,10 @@ interface ActivityDao {
         endDate: String
     ): List<ActivityEntry>
 
+    // Synchronous method for WorkManager (runs on background thread already)
+    @Query("SELECT * FROM activities ORDER BY date DESC")
+    fun getAllActivitiesSync(): List<ActivityEntry>
+
     @Query("DELETE FROM activities")
     suspend fun clearAll()
 }
