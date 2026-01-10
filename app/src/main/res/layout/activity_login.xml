@@ -9,174 +9,190 @@
     android:padding="24dp"
     tools:context=".LoginActivity">
 
-    <!-- LANGUAGE -->
-    <TextView
-        android:id="@+id/tvLanguage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LANGUAGE"
-        android:textColor="@color/police_khaki"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"/>
-
-    <!-- Logo -->
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:src="@drawable/maharashtra_police_logo"
-        android:contentDescription="Maharashtra Police Logo"
-        app:layout_constraintTop_toBottomOf="@id/tvLanguage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
-
-    <!-- Title Headings -->
-    <TextView
-        android:id="@+id/tvTitleEn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MAHARASHTRA POLICE"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:letterSpacing="0.05"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/ivLogo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/tvTitleMr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="महाराष्ट्र पोलीस"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/tvTitleEn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp"/>
-        
-    <TextView
-        android:id="@+id/tvSlogan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="सद्रक्षणाय खलनिग्रहणाय"
-        android:textColor="@color/police_khaki"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        app:layout_constraintTop_toBottomOf="@id/tvTitleMr"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <!-- Login Form Card -->
-    <androidx.cardview.widget.CardView
+    <!-- Login screen content wrapped in ScrollView for keyboard support -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvSlogan"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-        app:cardBackgroundColor="@color/card_background">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="24dp">
+            android:paddingBottom="24dp">
 
+            <!-- LANGUAGE -->
             <TextView
+                android:id="@+id/tvLanguage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Officer Login"
-                android:textColor="@color/text_main"
-                android:textSize="18sp"
+                android:text="LANGUAGE"
+                android:textColor="@color/police_khaki"
                 android:textStyle="bold"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="24dp"/>
-
-            <!-- Email / mobile -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/PoliceInput"
-                android:hint="Police ID / Mobile Number">
-                
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_main"
-                    android:inputType="textEmailAddress"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Password -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/PoliceInput"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="16dp"
-                android:hint="Password"
-                app:endIconMode="password_toggle">
-                
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/text_main"
-                    android:inputType="textPassword"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_marginEnd="16dp"/>
 
-            <!-- Login button -->
-            <Button
-                android:id="@+id/login"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:layout_marginTop="24dp"
-                android:text="LOGIN"
-                android:textSize="16sp"
-                android:letterSpacing="0.05"
-                android:textStyle="bold"
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/maharashtra_police_logo"
+                android:contentDescription="Maharashtra Police Logo"
+                app:layout_constraintTop_toBottomOf="@id/tvLanguage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp"/>
+
+            <!-- Title Headings -->
+            <TextView
+                android:id="@+id/tvTitleEn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MAHARASHTRA POLICE"
                 android:textColor="@color/text_inverse"
-                android:backgroundTint="@color/police_navy_blue"/>
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp"/>
 
             <TextView
-                android:id="@+id/tvSignup"
+                android:id="@+id/tvTitleMr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_gravity="center"
-                android:text="New Officer? Register Here"
-                android:textColor="@color/text_main"
+                android:text="महाराष्ट्र पोलीस"
+                android:textColor="@color/text_inverse"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                android:padding="8dp"/>
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleEn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4dp"/>
+                
+            <TextView
+                android:id="@+id/tvSlogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="सद्रक्षणाय खलनिग्रहणाय"
+                android:textColor="@color/police_khaki"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleMr"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp"/>
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+            <!-- Login Form Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvSlogan"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="@color/card_background">
 
-    <!-- Support link -->
-    <TextView
-        android:id="@+id/tvSupport"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Need Help? Contact Control Room"
-        android:textColor="@color/white"
-        android:alpha="0.8"
-        android:textSize="14sp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Officer Login"
+                        android:textColor="@color/text_main"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="24dp"/>
+
+                    <!-- Email -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/PoliceInput"
+                        android:hint="Email Address">
+                        
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_main"
+                            android:inputType="textEmailAddress"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Password -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/PoliceInput"
+                        android:layout_marginTop="16dp"
+                        android:hint="Password"
+                        app:endIconMode="password_toggle">
+                        
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text_main"
+                            android:inputType="textPassword"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Login button -->
+                    <Button
+                        android:id="@+id/login"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="24dp"
+                        android:text="LOGIN"
+                        android:textSize="16sp"
+                        android:letterSpacing="0.05"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_inverse"
+                        android:backgroundTint="@color/police_navy_blue"/>
+
+                    <TextView
+                        android:id="@+id/tvSignup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_gravity="center"
+                        android:text="New Officer? Register Here"
+                        android:textColor="@color/text_main"
+                        android:textStyle="bold"
+                        android:padding="8dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Support link -->
+            <TextView
+                android:id="@+id/tvSupport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Need Help? Contact Control Room"
+                android:textColor="@color/text_inverse"
+                android:alpha="0.8"
+                android:textSize="14sp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvSlogan"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+                
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
         
 </androidx.constraintlayout.widget.ConstraintLayout>
