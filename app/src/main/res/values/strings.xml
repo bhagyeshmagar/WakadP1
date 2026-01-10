@@ -5,12 +5,50 @@
     <string name="week_01_jan_07_jan">Week: 01 Jan - 07 Jan</string>
 
     <string-array name="activity_types">
-        <item>कवाडकर्म (Office work)</item>
-        <item>नागरी भेटी (Citizen visit)</item>
-        <item>तपास (Investigation)</item>
+        <!-- Office & Admin -->
+        <item>कवाडकर्म (Office Work)</item>
+        <item>ड्युटी रजिस्टर (Duty Register)</item>
+        <item>मेल विषयक (Mail/Documentation)</item>
+        <item>ट्रेनिंग (Training)</item>
+        <item>मीटिंग (Meeting)</item>
+        
+        <!-- Field Duties -->
         <item>गस्ती (Patrol)</item>
+        <item>नाका बंदी (Nakabandi/Checkpoint)</item>
+        <item>बंदोबस्त (Bandobast/Security)</item>
+        <item>VIP ड्युटी (VIP Duty)</item>
+        <item>रैली/मोर्चा (Rally/Morcha)</item>
+        
+        <!-- Investigation -->
+        <item>तपास (Investigation)</item>
+        <item>पंचनामा (Panchnama)</item>
+        <item>साइट व्हिजिट (Crime Scene Visit)</item>
+        <item>अटक / अन्वेषण (Arrest/Inquiry)</item>
+        <item>जप्ती (Seizure)</item>
+        
+        <!-- Public Interface -->
+        <item>नागरी भेटी (Citizen Visit)</item>
+        <item>तक्रार निवारण (Complaint Resolution)</item>
+        <item>धार्मिक स्थळ भेट (Religious Place Visit)</item>
+        <item>शाळा/कॉलेज भेट (School/College Visit)</item>
+        <item>जनजागृती (Public Awareness)</item>
+        
+        <!-- Legal & Court -->
+        <item>न्यायालय (Court Duty)</item>
+        <item>समन्स बजावणी (Summons Service)</item>
+        <item>वॉरंट अंमलबजावणी (Warrant Execution)</item>
+        
+        <!-- Emergency -->
         <item>आपत्कालीन (Emergency)</item>
-        <item>न्यायालय (Court)</item>
+        <item>अपघात स्थळ (Accident Site)</item>
+        <item>दंगल नियंत्रण (Riot Control)</item>
+        <item>बचाव कार्य (Rescue Operation)</item>
+        
+        <!-- Miscellaneous -->
+        <item>वाहन तपासणी (Vehicle Checking)</item>
+        <item>रात्र गस्ती (Night Patrol)</item>
+        <item>सायबर क्राइम (Cyber Crime)</item>
+        <item>महिला सुरक्षा (Women Safety)</item>
         <item>इतर (Other)</item>
     </string-array>
 

@@ -92,7 +92,6 @@ class ProfileActivity : AppCompatActivity() {
                 if (currentUser != null) {
                     populateUI(currentUser!!)
                 } else if (uid != null) {
-                    Toast.makeText(this@ProfileActivity, "Fetching profile from server...", Toast.LENGTH_SHORT).show()
                     fetchUserProfileFromFirebase(uid, db)
                 } else {
                     Toast.makeText(this@ProfileActivity, "User profile not found locally.", Toast.LENGTH_SHORT).show()
