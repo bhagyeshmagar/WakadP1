@@ -49,8 +49,9 @@ class DashboardActivity : AppCompatActivity() {
                 val total = db.activityDao().countForDate(todayKey, officerId)
                 val pending = db.activityDao().countPendingForDate(todayKey, officerId)
                 withContext(Dispatchers.Main) {
-                    tvTotalToday.text = total.toString()
-                    tvPending.text = pending.toString()
+                    // Animate the counts
+                    AnimationUtils.animateCount(tvTotalToday, 0, total)
+                    AnimationUtils.animateCount(tvPending, 0, pending)
                 }
             }
         }
@@ -59,10 +60,12 @@ class DashboardActivity : AppCompatActivity() {
 
         btnAdd.setOnClickListener {
             startActivity(Intent(this, AddEntryActivity::class.java))
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
         btnWeekly.setOnClickListener {
             startActivity(Intent(this, WeeklySummaryActivity::class.java))
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
     }
 

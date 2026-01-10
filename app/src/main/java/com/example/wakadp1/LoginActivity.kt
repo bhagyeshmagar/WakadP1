@@ -45,12 +45,14 @@ class LoginActivity : AppCompatActivity() {
                                     Toast.makeText(baseContext, "Authentication successful.", Toast.LENGTH_SHORT).show()
                                     val intent = Intent(this, DashboardActivity::class.java)
                                     startActivity(intent)
+                                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                                     finish()
                                 } else {
                                     // User does not have the correct role
                                     Toast.makeText(baseContext, "Authentication successful.", Toast.LENGTH_SHORT).show()
                                     val intent = Intent(this, DashboardActivity::class.java)
                                     startActivity(intent)
+                                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                                     finish()
                                 }
                             } else {
