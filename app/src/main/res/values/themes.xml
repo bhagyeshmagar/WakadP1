@@ -31,7 +31,9 @@
     
     <!-- Input Field Style -->
     <style name="PoliceInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/police_navy_blue</item>
-        <item name="hintTextColor">@color/police_navy_light</item>
+        <item name="boxStrokeColor">@color/text_main</item>
+        <item name="hintTextColor">@color/text_main</item>
+        <item name="android:textColorHint">@color/text_main</item>
+        <item name="boxBackgroundColor">@color/card_background</item>
     </style>
 </resources>

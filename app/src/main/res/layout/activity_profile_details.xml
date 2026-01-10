@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray_light"
+    android:background="@color/app_background"
     tools:context=".ProfileActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Personal Details"
-                android:textColor="@color/police_navy_blue"
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
@@ -110,6 +110,7 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/card_background"
                 android:layout_marginBottom="16dp">
 
                 <LinearLayout
@@ -119,7 +120,7 @@
                     android:padding="16dp">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/PoliceInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Full Name">
@@ -127,11 +128,12 @@
                             android:id="@+id/etProfileName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/text_main"
                             android:enabled="false"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/PoliceInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -141,11 +143,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:enabled="false"
+                            android:textColor="@color/text_main"
                             android:inputType="phone"/>
                     </com.google.android.material.textfield.TextInputLayout>
                     
                     <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/PoliceInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -154,6 +157,7 @@
                             android:id="@+id/etProfileEmail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/text_main"
                             android:enabled="false"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -165,7 +169,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Service Information"
-                android:textColor="@color/police_navy_blue"
+                android:textColor="@color/text_main"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="8dp"
@@ -176,6 +180,7 @@
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/card_background"
                 android:layout_marginBottom="16dp">
 
                 <LinearLayout
@@ -185,7 +190,7 @@
                     android:padding="16dp">
 
                     <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/PoliceInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Rank">
@@ -193,11 +198,12 @@
                             android:id="@+id/etProfileRank"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/text_main"
                             android:enabled="false"/>
                     </com.google.android.material.textfield.TextInputLayout>
                     
                     <com.google.android.material.textfield.TextInputLayout
-                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                         style="@style/PoliceInput"
                          android:layout_width="match_parent"
                          android:layout_height="wrap_content"
                          android:layout_marginTop="12dp"
@@ -206,11 +212,12 @@
                              android:id="@+id/etProfileBuckleNo"
                              android:layout_width="match_parent"
                              android:layout_height="wrap_content"
+                             android:textColor="@color/text_main"
                              android:enabled="false"/>
                      </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        style="@style/PoliceInput"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -219,6 +226,7 @@
                             android:id="@+id/etProfileStation"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:textColor="@color/text_main"
                             android:enabled="false"/>
                     </com.google.android.material.textfield.TextInputLayout>
 

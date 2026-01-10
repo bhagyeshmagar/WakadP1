@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Palette for Maharashtra Police -->
+    
+    <!-- Brand Overrides for Dark Mode -->
+    <color name="police_navy_blue">#002147</color> <!-- Keep brand color, maybe slightly desaturated if needed -->
+    <color name="police_khaki">#C5A059</color> 
+    
+    <!-- Semantic Token Overrides -->
+    <color name="app_background">#121212</color>       <!-- Very Dark Grey / Black -->
+    <color name="card_background">#1E1E1E</color>      <!-- Dark Card Surface -->
+    
+    <color name="text_main">#E0E0E0</color>            <!-- Off-White for main text -->
+    <color name="text_sub">#B0B0B0</color>             <!-- Light Gray for secondary -->
+    <color name="text_inverse">#E0E0E0</color>         <!-- White on dark buttons stays white -->
+    
+    <color name="icon_tint">#C5A059</color>            <!-- Khaki icons on dark bg look better than Navy -->
+    <color name="input_surface">#2C2C2C</color>        <!-- Darker input field background -->
+    <color name="white">#FFFFFF</color>                
+    <color name="black">#000000</color>
+    
+    <!-- Map specifics -->
+    <color name="background_light">@color/app_background</color>
+    <color name="surface_card">@color/card_background</color>
+    <color name="text_primary">@color/text_main</color>
+    <color name="text_secondary">@color/text_sub</color>
+    
+</resources>

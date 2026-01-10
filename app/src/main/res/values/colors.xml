@@ -21,6 +21,15 @@
     <color name="text_primary">#002147</color>     <!-- Navy for headers -->
     <color name="text_secondary">#757575</color>
     
+    <!-- SEMANTIC COLOR TOKENS (Use these in layouts) -->
+    <color name="app_background">@color/background_light</color>
+    <color name="card_background">@color/surface_card</color>
+    <color name="text_main">@color/text_primary</color>
+    <color name="text_sub">@color/text_secondary</color>
+    <color name="text_inverse">@color/white</color>
+    <color name="icon_tint">@color/police_navy_blue</color>
+    <color name="input_surface">@color/white</color>
+
     <!-- Legacy compatibility mapped to new system -->
     <color name="md_yellow_600">@color/police_gold</color>
     <color name="gray_light">@color/background_light</color>
