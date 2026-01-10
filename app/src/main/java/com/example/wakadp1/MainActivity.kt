@@ -1,47 +1,24 @@
 package com.example.wakadp1
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.wakadp1.ui.theme.WakadP1Theme
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            WakadP1Theme {
-                Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        
+        // Check if user is logged in
+        val prefs = getSharedPreferences("waka_prefs", MODE_PRIVATE)
+        val officerId = prefs.getString("officer_id", null)
+        
+        if (officerId.isNullOrEmpty()) {
+            // Not logged in, go to login
+            startActivity(Intent(this, LoginActivity::class.java))
+        } else {
+            // Already logged in, go to dashboard
+            startActivity(Intent(this, DashboardActivity::class.java))
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    WakadP1Theme {
-        Greeting("Android")
+        finish()
     }
 }
