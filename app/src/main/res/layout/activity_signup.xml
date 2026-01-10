@@ -119,7 +119,7 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="8dp"
                             android:layout_weight="1"
-                            android:background="@drawable/abc_popup_background_mtrl_mult">
+                            android:background="@drawable/bg_surface_input">
 
                             <Spinner
                                 android:id="@+id/spinnerBloodGroup"
@@ -198,7 +198,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
-                        android:background="@drawable/abc_popup_background_mtrl_mult">
+                        android:background="@drawable/bg_surface_input">
 
                         <Spinner
                             android:id="@+id/spinnerRank"
@@ -262,7 +262,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginBottom="12dp"
-                        android:background="@drawable/abc_popup_background_mtrl_mult">
+                        android:background="@drawable/bg_surface_input">
 
                         <Spinner
                             android:id="@+id/spinnerDistrict"
@@ -281,7 +281,7 @@
                     <FrameLayout
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
-                        android:background="@drawable/abc_popup_background_mtrl_mult">
+                        android:background="@drawable/bg_surface_input">
 
                         <Spinner
                             android:id="@+id/spinnerStation"
