@@ -3,7 +3,7 @@
     <!-- Dark Mode Palette for Maharashtra Police -->
     
     <!-- Brand Overrides for Dark Mode -->
-    <color name="police_navy_blue">#002147</color> <!-- Keep brand color, maybe slightly desaturated if needed -->
+    <color name="police_navy_blue">#5472d3</color> <!-- Vibrant Police Blue for Dark Mode -->
     <color name="police_khaki">#C5A059</color> 
     
     <!-- Semantic Token Overrides -->

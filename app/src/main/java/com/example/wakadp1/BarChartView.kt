@@ -11,12 +11,31 @@ class BarChartView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private val barPaint = Paint().apply { color = Color.parseColor("#002147") } // Navy Blue
-    private val textPaint = Paint().apply {
-        color = Color.BLACK
-        textSize = 30f
-        textAlign = Paint.Align.CENTER
+    private val barPaint = Paint()
+    private val textPaint = Paint()
+
+    init {
+        // Resolve colors dynamically from themes
+        // Default to Navy Blue / Black if resource not found (safety)
+        val barColor = try {
+            context.getColor(R.color.police_navy_blue)
+        } catch (e: Exception) {
+            Color.parseColor("#002147")
+        }
+        
+        val textColor = try {
+            context.getColor(R.color.text_main)
+        } catch (e: Exception) {
+            Color.BLACK
+        }
+
+        barPaint.color = barColor
+        
+        textPaint.color = textColor
+        textPaint.textSize = 30f
+        textPaint.textAlign = Paint.Align.CENTER
     }
+
     private var data: List<Pair<String, Int>> = emptyList()
 
     fun setData(newData: List<Pair<String, Int>>) {

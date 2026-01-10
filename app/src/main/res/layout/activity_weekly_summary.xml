@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_light"
+    android:background="@color/app_background"
     android:orientation="vertical"
     tools:context=".WeeklySummaryActivity">
 
@@ -22,7 +22,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_launcher_background"
-            app:tint="@color/white"
+            app:tint="@color/text_inverse"
             android:layout_marginEnd="16dp"/>
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Weekly Summary"
-            android:textColor="@color/white"
+            android:textColor="@color/text_inverse"
             android:textSize="20sp"
             android:textStyle="bold"/>
 
@@ -39,7 +39,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@android:drawable/ic_menu_save"
-            app:tint="@color/white"
+            app:tint="@color/text_inverse"
             android:contentDescription="Export as PDF"/>
     </LinearLayout>
 
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="16dp"
-        android:background="@color/white"
+        android:background="@android:color/transparent"
         android:elevation="4dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
