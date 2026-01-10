@@ -13,6 +13,7 @@
 
         <!-- Header Section -->
         <FrameLayout
+            android:id="@+id/headerProfile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/police_navy_blue">

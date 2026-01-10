@@ -35,37 +35,22 @@ class LoginActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(emailText, passwordText)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+                        // Check user role or just proceed
                         val user = auth.currentUser
-                        user?.getIdToken(true)?.addOnCompleteListener { tokenTask ->
-                            if (tokenTask.isSuccessful) {
-                                val token: GetTokenResult? = tokenTask.result
-                                val claims = token?.claims
-                                if (claims == null || claims["role"] == "police") {
-                                    // User has the correct role, proceed to Dashboard
-                                    Toast.makeText(baseContext, "Authentication successful.", Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this, DashboardActivity::class.java)
-                                    startActivity(intent)
-                                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-                                    finish()
-                                } else {
-                                    // User does not have the correct role
-                                    Toast.makeText(baseContext, "Authentication successful.", Toast.LENGTH_SHORT).show()
-                                    val intent = Intent(this, DashboardActivity::class.java)
-                                    startActivity(intent)
-                                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-                                    finish()
-                                }
-                            } else {
-                                // Error getting token
-                                Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
-                            }
-                        }
+                        Toast.makeText(baseContext, "Authentication successful.", Toast.LENGTH_SHORT).show()
+                        val intent = Intent(this, DashboardActivity::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                        finish()
                     } else {
-                        // If sign in fails, display a message to the user.
-                        Toast.makeText(baseContext, "Authentication failed.",
-                            Toast.LENGTH_SHORT).show()
+                        Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
                     }
                 }
+        }
+
+        findViewById<android.widget.TextView>(R.id.tvSignup).setOnClickListener {
+            startActivity(Intent(this, SignupActivity::class.java))
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
     }
 }

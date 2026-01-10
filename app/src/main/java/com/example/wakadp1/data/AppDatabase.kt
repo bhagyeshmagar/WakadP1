@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [ActivityEntry::class], version = 2, exportSchema = false)
+@Database(entities = [ActivityEntry::class, User::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun activityDao(): ActivityDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile
@@ -18,10 +19,10 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "waka_police_db"
+                    "wakad_p1_database"
                 )
-                    .fallbackToDestructiveMigration()
-                    .build()
+                .fallbackToDestructiveMigration() // For development simplicity
+                .build()
                 INSTANCE = instance
                 instance
             }

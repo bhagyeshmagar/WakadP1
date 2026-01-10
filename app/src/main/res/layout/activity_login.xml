@@ -149,6 +149,17 @@
                 android:textColor="@color/white"
                 android:backgroundTint="@color/police_navy_blue"/>
 
+            <TextView
+                android:id="@+id/tvSignup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"
+                android:text="New Officer? Register Here"
+                android:textColor="@color/police_navy_blue"
+                android:textStyle="bold"
+                android:padding="8dp"/>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

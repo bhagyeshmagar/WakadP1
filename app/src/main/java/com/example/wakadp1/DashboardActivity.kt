@@ -17,6 +17,8 @@ import java.util.*
 class DashboardActivity : AppCompatActivity() {
 
     private lateinit var db: AppDatabase
+    private lateinit var tvOfficerName: TextView
+    private lateinit var tvBranch: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +29,8 @@ class DashboardActivity : AppCompatActivity() {
         val officerId = prefs.getString("officer_id", "") ?: ""
         val officerName = prefs.getString("officer_name", "Officer")
 
-        val tvOfficerName = findViewById<TextView>(R.id.tvOfficerName)
-        val tvBranch = findViewById<TextView>(R.id.tvBranch)
+        tvOfficerName = findViewById(R.id.tvOfficerName)
+        tvBranch = findViewById(R.id.tvBranch)
         val tvDate = findViewById<TextView>(R.id.tvDate)
         val tvTotalToday = findViewById<TextView>(R.id.tvTotalToday)
         val tvPending = findViewById<TextView>(R.id.tvPending)
@@ -58,6 +60,22 @@ class DashboardActivity : AppCompatActivity() {
 
         refreshCounts()
 
+        // Profile Navigation
+        findViewById<android.view.View>(R.id.headerProfile).setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        }
+
+        findViewById<android.widget.TextView>(R.id.tvOfficerName).setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+        }
+
+        // --- LOAD DATA ---
+        loadOfficerProfile()
+
         btnAdd.setOnClickListener {
             startActivity(Intent(this, AddEntryActivity::class.java))
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
@@ -75,5 +93,17 @@ class DashboardActivity : AppCompatActivity() {
         // simple approach: recreate activity to call onCreate again OR call internal refresh
         // We'll call a refresh by re-launching a function; quick approach: recreate
         // but safer: call refreshCounts logic via finding views again (omitted for brevity)
+    }
+    
+    private fun loadOfficerProfile() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val user = db.userDao().getCurrentUser()
+            withContext(Dispatchers.Main) {
+                if (user != null) {
+                    tvOfficerName.text = user.fullName
+                    tvBranch.text = "${user.rank} | ${user.policeStation}"
+                }
+            }
+        }
     }
 }
