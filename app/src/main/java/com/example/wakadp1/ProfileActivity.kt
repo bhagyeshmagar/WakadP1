@@ -91,10 +91,35 @@ class ProfileActivity : AppCompatActivity() {
             withContext(Dispatchers.Main) {
                 if (currentUser != null) {
                     populateUI(currentUser!!)
+                } else if (uid != null) {
+                    Toast.makeText(this@ProfileActivity, "Fetching profile from server...", Toast.LENGTH_SHORT).show()
+                    fetchUserProfileFromFirebase(uid, db)
                 } else {
                     Toast.makeText(this@ProfileActivity, "User profile not found locally.", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
+    }
+
+    private fun fetchUserProfileFromFirebase(uid: String, db: AppDatabase) {
+        val userRef = FirebaseDatabase.getInstance().getReference("users").child(uid)
+        userRef.get().addOnSuccessListener { snapshot ->
+            if (snapshot.exists()) {
+                val remoteUser = snapshot.getValue(User::class.java)
+                if (remoteUser != null) {
+                    currentUser = remoteUser
+                    populateUI(remoteUser)
+                    
+                    // Save to local DB for next time
+                    lifecycleScope.launch(Dispatchers.IO) {
+                        db.userDao().insertUser(remoteUser)
+                    }
+                }
+            } else {
+                Toast.makeText(this@ProfileActivity, "Profile not found on server.", Toast.LENGTH_SHORT).show()
+            }
+        }.addOnFailureListener {
+            Toast.makeText(this@ProfileActivity, "Failed to fetch profile: ${it.message}", Toast.LENGTH_SHORT).show()
         }
     }
 
